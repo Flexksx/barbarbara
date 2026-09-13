@@ -18,7 +18,7 @@
 
 ## Commands
 
-```
+```text
 just format        # repo-wide format
 just lint          # repo-wide lint
 just build all     # build all units
@@ -41,7 +41,7 @@ just new react     # scaffold a React unit
 ### apps/ui (React frontend)
 
 - Vite + React 19 + TypeScript
-- Linting: oxlint (nix)
-- Formatting: oxfmt (nix)
+- Linting: biome
+- Formatting: biome
 - Testing: vitest
 - Start: `vite` dev server

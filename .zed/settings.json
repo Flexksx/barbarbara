@@ -1,0 +1,56 @@
+{
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff", "ty"],
+      "formatter": {
+        "external": {
+          "command": "ruff",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
+        }
+      },
+      "format_on_save": "on"
+    },
+    "TypeScript": {
+      "language_servers": ["biome"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "TSX": {
+      "language_servers": ["biome"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "JavaScript": {
+      "language_servers": ["biome"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "JSX": {
+      "language_servers": ["biome"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "JSON": {
+      "language_servers": ["biome"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "JSONC": {
+      "language_servers": ["biome"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    },
+    "CSS": {
+      "language_servers": ["biome"],
+      "formatter": "language_server",
+      "format_on_save": "on"
+    }
+  },
+  "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
+    }
+  }
+}

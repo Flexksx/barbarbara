@@ -12,6 +12,10 @@
     config.devShells.default = pkgs.mkShell {
       name = "project-dev-env";
       packages = lib.unique config.shellPackages;
+
+      # Every tool comes from nix. Stop moon from injecting proto shims
+      # and proto toolchains into the task PATH.
+      MOON_TOOLCHAIN_FORCE_GLOBALS = "1";
     };
   };
 }
