@@ -1,0 +1,10 @@
+# {{ name }}
+
+## Tasks
+
+Run these from the repo root:
+
+- `just lint unit {{ name }}`
+- `just test unit {{ name }}`
+
+The task definitions live in `.moon/tasks/python.yml`.

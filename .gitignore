@@ -1,0 +1,11 @@
+.direnv/
+result
+result-*
+node_modules/
+.moon/cache/
+.moon/docker/
+.just/*/units.just
+.just/*/units.just.staged
+.DS_Store
+.vscode/
+.idea/
