@@ -25,8 +25,10 @@ class StrainActionResponse(BaseModel):
     remove_tags: frozenset[str]
 
 
-def _action_discriminator(value: dict[str, object]) -> str:
-    return str(value.get("type", ""))
+def _action_discriminator(value: object) -> str:
+    if isinstance(value, dict):
+        return str(value.get("type", ""))
+    return str(getattr(value, "type", ""))
 
 
 type ActionResponse = Annotated[

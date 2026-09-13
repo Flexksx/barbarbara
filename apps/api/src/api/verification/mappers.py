@@ -23,12 +23,7 @@ from api_rest_contract.verification import StepViolationResponse, VerifyPlanResp
 
 
 def properties_to_core(source: PropertiesResponse) -> CoreProperties:
-    return CoreProperties(
-        ph=source.ph,
-        brix=source.brix,
-        abv=source.abv,
-        density=source.density,
-    )
+    return CoreProperties(ph=source.ph, brix=source.brix, abv=source.abv, density=source.density)
 
 
 def constraint_to_core(source: ConstraintResponse) -> CoreConstraint:
@@ -79,10 +74,7 @@ def action_to_core(source: ActionResponse) -> CoreAction:
 
 def properties_to_response(source: CoreProperties) -> PropertiesResponse:
     return PropertiesResponse(
-        ph=source.ph,
-        brix=source.brix,
-        abv=source.abv,
-        density=source.density,
+        ph=source.ph, brix=source.brix, abv=source.abv, density=source.density
     )
 
 
@@ -109,14 +101,10 @@ def equipment_to_response(source: CoreEquipment) -> EquipmentResponse:
 
 
 def violation_to_response(source: CoreStepViolation) -> StepViolationResponse:
-    return StepViolationResponse(
-        step=source.step,
-        kind=source.kind,
-        message=source.message,
-    )
+    return StepViolationResponse(step=source.step, kind=source.kind, message=source.message)
 
 
-def verification_result_to_response(source: VerificationResult) -> VerifyPlanResponse:
+def result_to_response(source: VerificationResult) -> VerifyPlanResponse:
     return VerifyPlanResponse(
         valid=source.valid,
         violations=[violation_to_response(v) for v in source.violations],

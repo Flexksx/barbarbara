@@ -1,18 +1,14 @@
 from api_core.verification import verify
 from api_rest_contract.verification import VerifyPlanRequest, VerifyPlanResponse
-from fastapi import APIRouter
 
-from api.mappers import (
+from api.verification.mappers import (
     action_to_core,
     equipment_to_core,
     material_to_core,
-    verification_result_to_response,
+    result_to_response,
 )
 
-router = APIRouter()
 
-
-@router.post("/verify")
 def verify_plan(request: VerifyPlanRequest) -> VerifyPlanResponse:
     materials = {k: material_to_core(v) for k, v in request.materials.items()}
     equipment = {k: equipment_to_core(v) for k, v in request.equipment.items()}
@@ -20,4 +16,4 @@ def verify_plan(request: VerifyPlanRequest) -> VerifyPlanResponse:
 
     result = verify(actions, materials, equipment)
 
-    return verification_result_to_response(result)
+    return result_to_response(result)

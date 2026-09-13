@@ -2,7 +2,7 @@ line-length = 100
 src = ["src", "tests"]
 
 [lint]
-ignore = ["A003"]
+ignore = ["A003", "B008"]
 select = [
     "A",
     "ANN",
@@ -32,6 +32,7 @@ ban-relative-imports = "all"
 
 [lint.per-file-ignores]
 "tests/**/*.py" = ["ARG"]
+"src/api/main.py" = ["ARG001"]
 
 [format]
 docstring-code-format = true

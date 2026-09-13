@@ -15,8 +15,10 @@ class MaxAbvResponse(BaseModel):
     abv: float = Field(ge=0.0, le=1.0)
 
 
-def _constraint_discriminator(value: dict[str, object]) -> str:
-    return str(value.get("type", ""))
+def _constraint_discriminator(value: object) -> str:
+    if isinstance(value, dict):
+        return str(value.get("type", ""))
+    return str(getattr(value, "type", ""))
 
 
 type ConstraintResponse = Annotated[
