@@ -19,6 +19,7 @@
         "source.fixAll.ruff": true,
         "source.organizeImports.ruff": true
       },
+      "format_on_save": "on"
     },
     "TypeScript": {
       "language_servers": ["biome"],

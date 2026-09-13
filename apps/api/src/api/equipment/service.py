@@ -1,7 +1,7 @@
 from api_rest_contract.equipment import CreateEquipmentRequest, EquipmentResponse
 from sqlalchemy.orm import Session
 
-from api.equipment import repository as equipment_repository
+import api.equipment.repository as equipment_repository
 from api.equipment.mappers import model_to_response, request_to_model
 
 
