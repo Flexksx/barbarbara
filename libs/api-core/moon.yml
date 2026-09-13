@@ -1,0 +1,6 @@
+$schema: 'https://moonrepo.dev/schemas/v2/project.json'
+
+language: 'python'
+tags: ['python']
+layer: 'library'
+

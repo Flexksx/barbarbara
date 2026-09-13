@@ -1,4 +1,11 @@
 {
+  "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
+    }
+  },
   "languages": {
     "Python": {
       "language_servers": ["ruff", "ty"],
@@ -8,26 +15,45 @@
           "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
         }
       },
-      "format_on_save": "on"
+      "code_actions_on_format": {
+        "source.fixAll.ruff": true,
+        "source.organizeImports.ruff": true
+      },
     },
     "TypeScript": {
       "language_servers": ["biome"],
       "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      },
       "format_on_save": "on"
     },
     "TSX": {
       "language_servers": ["biome"],
       "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      },
       "format_on_save": "on"
     },
     "JavaScript": {
       "language_servers": ["biome"],
       "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      },
       "format_on_save": "on"
     },
     "JSX": {
       "language_servers": ["biome"],
       "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true
+      },
       "format_on_save": "on"
     },
     "JSON": {
@@ -43,14 +69,10 @@
     "CSS": {
       "language_servers": ["biome"],
       "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.fixAll.biome": true
+      },
       "format_on_save": "on"
-    }
-  },
-  "lsp": {
-    "biome": {
-      "settings": {
-        "require_config_file": true
-      }
     }
   }
 }
