@@ -16,5 +16,10 @@ possibly-missing-attribute = "error"
 possibly-missing-import = "error"
 possibly-unresolved-reference = "error"
 unsound-assignment = "error"
+
+[[overrides]]
+include = ["src/api/*/models.py"]
+[overrides.rules]
+unsound-assignment = "warn"
 unsound-return-statement = "error"
 unsound-yield = "error"

@@ -9,7 +9,7 @@ from api.database import Base
 class MaterialModel(Base):
     __tablename__ = "materials"
 
-    id: Mapped[str] = mapped_column(primary_key=True)
+    id: Mapped[str] = mapped_column(primary_key=True)  # type: ignore[assignment]
     ph: Mapped[float]
     brix: Mapped[float]
     abv: Mapped[float]

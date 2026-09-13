@@ -5,12 +5,12 @@ from api_rest_contract.properties import PropertiesResponse
 from api.material.models import MaterialModel
 
 
-def _parse_constraint(data: dict[str, object]) -> ConstraintResponse:
+def _parse_constraint(data: dict[str, float | str]) -> ConstraintResponse:
     match data.get("type"):
         case "curdles_below":
-            return CurdlesBelowResponse(ph=float(data["ph"]))  # type: ignore[arg-type]
+            return CurdlesBelowResponse(ph=float(data["ph"]))
         case "max_abv":
-            return MaxAbvResponse(abv=float(data["abv"]))  # type: ignore[arg-type]
+            return MaxAbvResponse(abv=float(data["abv"]))
         case other:
             msg = f"Unknown constraint type: {other}"
             raise ValueError(msg)

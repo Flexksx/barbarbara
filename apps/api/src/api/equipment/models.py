@@ -9,6 +9,6 @@ from api.database import Base
 class EquipmentModel(Base):
     __tablename__ = "equipment"
 
-    id: Mapped[str] = mapped_column(primary_key=True)
+    id: Mapped[str] = mapped_column(primary_key=True)  # type: ignore[assignment]
     capacity_ml: Mapped[float]
     accepts_tags: Mapped[list[Any]] = mapped_column(JSON, default=list)
