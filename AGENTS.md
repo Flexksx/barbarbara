@@ -2,10 +2,12 @@
 
 ## Project map
 
-| Unit       | Path        | Stack              | Language   |
-|------------|-------------|---------------------|-----------|
-| api        | apps/api    | backend application | Python    |
-| ui         | apps/ui     | frontend application| TypeScript|
+| Unit              | Path                   | Stack                | Language   |
+|-------------------|------------------------|----------------------|------------|
+| api               | apps/api               | backend application  | Python     |
+| ui                | apps/ui                | frontend application | TypeScript |
+| api-core          | libs/api-core          | domain model library | Python     |
+| api-rest-contract | libs/api-rest-contract | REST DTO library     | Python     |
 
 ## Tooling
 
